@@ -1,0 +1,138 @@
+Lucas Rodrigues Capiluppi 202202863157
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+
+
+public class MARCASYS {
+    public static void main(String[] args) throws SQLException {
+       /* String SQLcriarTabela = "CREATE TABLE marca (" +
+                "nome VARCHAR(100) PRIMARY KEY, " +
+                "idade VARCHAR(10), " +
+                "país VARCHAR(30), " +
+                "valor DECIMAL(20,2)" +
+                ")";*/
+        
+        /*String SQLInserirMarca = "INSERT INTO marca (nome, idade, país, valor) VALUES " +
+                "('Nike', '59','Estados Unidos', 169000000000.00), " + 
+                "('Adidas', '73','Alemanha', 31000000000.00), " +
+                "('Puma', '75','Alemanha', 45000000000.00), " +
+                "('Samsung', '54','Coreia do Sul', 87000000000.00), " +
+                "('Motorola', '94','Estados Unidos', 3000000000.00), " +
+                "('Apple', '47','Estados Unidos', 297000000000.00), " +
+                "('Amazon', '28','Estados Unidos', 300000000000.00), " + 
+                "('Microsoft', '48', 'Estados Unidos', 278000000000.00), " + 
+                "('Americanas', '93','Brasil', 270000000.00), " + 
+                "('Toyota', '85','Japão', 60000000.00), " + 
+                "('Fiat', '123','Itália', 45000000000.00), " + 
+                "('Honda', '74','Japão', 50000000000.00), " +
+                "('Google', '24','Estados Unidos', 280000000000.00), " +
+                "('China Mobile', '29', 'China', 54000000000.00), " +
+                "('BMW', '103', 'Alemanha', 41000000000.00), " +
+                "('Emirates', '15','Dubai', 4000000000.00), " +
+                "('Havaianas', '59','Brasil', 2000000000.00), " +
+                "('Nubank', '10','Brasil', 2000000000.00), " +
+                "('Coca-Cola', '131','Estados Unidos', 97000000000.00), " +
+                "('Pepsi', '120','Estados Unidos', 240000000000.00), " +
+                
+                //atualizar dados
+                //String SQLatualizarDados = "UPDATE marca SET valor = 1100000000.00 WHERE nome = 'Nike'";
+                
+                //etapa delete
+               //String SQLexcluirJogador = "DELETE FROM marca WHERE nome = 'Adidas'";
+                
+                String driver = "jdbc:postgresql://127.0.0.1:5432/MARCASYS";
+                
+                Statement st = null;
+                ResultSet result;
+               
+                try (Connection conn = DriverManager.getConnection(driver, "postgres", "Estacio@123")) {
+                    if (conn != null) {
+                        System.out.println("Connected to the database!");
+                    } else {
+                        System.out.println("Failed to make connection!");
+                    }
+
+            /*System.out.println("Gerando tabela, aguarde alguns segundos...");
+            st = conn.createStatement();
+            st.executeUpdate(SQLcriarTabela);
+            System.out.println("Tabela foi gerada com êxito!");
+            st.close();*/
+
+            /*System.out.println("Inserindo informações na tabela.");
+            st = conn.createStatement();
+            st.executeUpdate(SQLInserirMarca);
+            System.out.println("Dados inseridos!");
+            st.close();*/
+
+            /*System.out.println("Consultando dados na Tabela...");
+            st = conn.createStatement();
+            String SQLconsultarDados = "SELECT nome, idade, país, valor FROM marca";
+            result = st.executeQuery(SQLconsultarDados);
+            while (result.next()) {
+                System.out.println("----------------------");
+                System.out.println("Nome da marca: " + result.getString("nome"));
+                System.out.println("Idade da marca: " + result.getString("idade"));
+                System.out.println("País da marca: " + result.getString("país"));
+                System.out.println("Valor da marca: " + result.getString("valor"));
+            }
+            result.close();
+            st.close();*/
+            
+             /*System.out.println("Atualizando dados na Tabela...");
+		st = conn.createStatement();
+		st.executeUpdate(SQLatualizarDados);
+		System.out.println("Dados atualizados!");
+		st.close();
+		conn.close();*/
+            
+
+            /*System.out.println("Excluindo dados na Tabela...");
+            st = conn.createStatement();
+            st.executeUpdate(SQLexcluirMarca);
+            System.out.println("Dados excluídos!");
+            st.close();
+            conn.close();*/
+            
+            /*System.out.println("Buscando marcas de alto valor...");
+            st = conn.createStatement();
+            String SQLconsultarValorAlto = "SELECT nome, idade, país, valor FROM marca " +
+                "WHERE (valor >= 600000000.00)";
+            ResultSet result = st.executeQuery(SQLconsultarValorAlto);
+            while (result.next()) {
+                System.out.println("----------------------");
+                System.out.println("Nome da marca: " + result.getString("nome"));
+                System.out.println("Idade da marca: " + result.getString("idade"));
+                System.out.println("País da marca: " + result.getString("país"));
+                System.out.println("Valor da marca: " + result.getString("valor"));
+            }
+            result.close();
+            st.close();*/
+            
+            
+           /* System.out.println("Procurando marcas de valor baixo");
+            st = conn.createStatement();
+            String SQLconsultarValorBaixo = "SELECT nome, idade, país, valor FROM marca " +
+                "WHERE (valor < 100000000.00)";
+            ResultSet result = st.executeQuery(SQLconsultarValorBaixo);
+            while (result.next()) {
+                System.out.println("----------------------");
+                System.out.println("Nome da marca: " + result.getString("nome"));
+                System.out.println("Idade da marca: " + result.getString("idade"));
+                System.out.println("País da marca: " + result.getString("país"));
+                System.out.println("Valor da marca: " + result.getString("valor"));
+            }
+            result.close();
+            st.close();*/
+  
+        } catch (SQLException e) {
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        }
+    }
+}
